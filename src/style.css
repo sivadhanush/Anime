@@ -31,12 +31,22 @@ body {
   background-color: black;
 }
 
+/* Keep full-height but allow scrolling; controls are fixed so they stay visible.
+   If you want to lock scrolling only during the animation, use a `.no-scroll` class
+   toggled from JS (see README or ask me to implement). */
+html, body {
+  height: 100%;
+  overflow: auto; /* allow scrolling so controls aren't hidden off-screen */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-#app {
+/* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -53,6 +63,48 @@ h1 {
   align-items: center;
   justify-content: center;
   background-color: black;
+} */
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Controls: pin to bottom center so they're always visible on all viewports */
+.controls {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+.controls input[type="range"] {
+  width: clamp(120px, 40vw, 200px);
+}
+
+.animation-container {
+  position: relative;
+  width: min(1000px, 90vw);
+  height: min(1000px, 90vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin: 0 auto;
 }
 
 .animation-container.fade-out {
