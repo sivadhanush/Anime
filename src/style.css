@@ -31,9 +31,6 @@ body {
   background-color: black;
 }
 
-/* Keep full-height but allow scrolling; controls are fixed so they stay visible.
-   If you want to lock scrolling only during the animation, use a `.no-scroll` class
-   toggled from JS (see README or ask me to implement). */
 html, body {
   height: 100%;
   overflow: auto; /* allow scrolling so controls aren't hidden off-screen */
@@ -46,25 +43,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.animation-container {
-  position: relative;
-  width: 1000px;
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-} */
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -75,7 +53,6 @@ h1 {
   box-sizing: border-box;
 }
 
-/* Controls: pin to bottom center so they're always visible on all viewports */
 .controls {
   position: fixed;
   bottom: 16px;
@@ -214,3 +191,152 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } 
+
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+.controls {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+.controls input[type="range"] {
+  width: clamp(120px, 40vw, 200px);
+}
+
+.animation-container {
+  position: relative;
+  width: min(1000px, 90vw);
+  height: min(1000px, 90vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.animation-container.fade-out {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.grouped-elements {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1000ms ease-out;
+}
+
+.grouped-elements.move-up {
+  transform: translateY(-75px);
+}
+
+.star {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 370px;
+  top: -75px;
+  transform: scale(0.1) rotate(0deg) translateY(-50%);
+  transition: all 1000ms ease-out;
+  z-index: 10;
+}
+
+.star.animate-star {
+  left: 50%;
+  top: -25%;
+  transform: translateX(-50%) scale(1) rotate(-180deg) translateY(0%);
+}
+
+
+.star.grow {
+  transition: all 500ms ease-out;
+  transform: translateX(-50%) scale(1.2) rotate(-180deg) translateY(0%);
+}
+
+.base-wrapper {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.base {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  z-index: 1;
+}
+.base.fade-in {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.text {
+  position: absolute;
+  bottom: 300px;
+  width: 200px;
+  height: auto;
+  scale: 2;
+  opacity: 0;
+  transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+  transform: translateY(-35px);
+}
+
+.text.reveal {
+  opacity: 1;
+  transform: translateY(-75px);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #fff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}  */
