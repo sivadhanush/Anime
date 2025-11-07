@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/logo.svg",
+      "source": "/base.svg",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]
